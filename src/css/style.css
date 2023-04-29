@@ -1,3 +1,12 @@
+:root {
+    --white: #ffffff;
+    --black: #0f0f0f;
+    --bg-board: #7d7d7d;
+    --bg-key: #1a1a1a;
+    --bg-key-active: #7d9ea8;
+    --color-key: #d4d4cf;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -25,4 +34,67 @@ h5,
 h6 {
     margin: 0;
     padding: 0;
+    color: var(--bg-key-active);
+}
+
+body {
+    transition: 0.3s;
+    background-color: var(--white);
+}
+
+.wrapper {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 0 10px;
+    font-size: 20px;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 10px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.info > p {
+    font-size: 14px;
+    color: var(--bg-key-active);
+}
+
+.textarea {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    background-color: var(--white);
+    color: var(--black);
+    margin-bottom: 10px;
+    padding: 10px;
+    outline: none;
+    resize: none;
+}
+
+.textarea:focus {
+    outline: none;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 5px;
+    height: 320px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 12px;
+    background-color: var(--bg-board);
+    user-select: none;
 }
