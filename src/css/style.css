@@ -4,6 +4,7 @@
     --bg-board: #7d7d7d;
     --bg-key: #1a1a1a;
     --bg-key-active: #7d9ea8;
+    --bg-key-hover: #5c3d3d;
     --color-key: #d4d4cf;
 }
 
@@ -43,7 +44,7 @@ body {
 }
 
 .wrapper {
-    max-width: 1050px;
+    max-width: 1085px;
     margin: 0 auto;
     padding: 0 10px;
     font-size: 20px;
@@ -77,6 +78,8 @@ body {
     background-color: var(--white);
     color: var(--black);
     margin-bottom: 10px;
+    font-size: 20px;
+    font-family: 'Roboto', Arial, monospace;
     padding: 10px;
     outline: none;
     resize: none;
@@ -88,13 +91,72 @@ body {
 
 .keyboard {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 5px;
-    height: 320px;
     margin: 0 auto;
     padding: 10px;
     border-radius: 12px;
     background-color: var(--bg-board);
     user-select: none;
+    overflow: hidden;
+}
+
+.keyboard-row {
+    display: flex;
+    gap: 5px;
+}
+
+.key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 65px;
+    height: 65px;
+    background-color: var(--bg-key);
+    color: var(--color-key);
+    border-radius: 12px;
+}
+
+.pressed {
+    background: var(--bg-key-active);
+    transform: scale(0.95);
+    transition: all 0.2s ease-in-out;
+}
+
+.key:hover {
+    cursor: pointer;
+    background: var(--bg-key-hover);
+}
+
+.Enter,
+.ShiftRight,
+.ShiftLeft,
+.Backspace,
+.CapsLock {
+    width: 135px;
+}
+
+.Space {
+    width: 485px;
+}
+
+.CapsLock {
+    position: relative;
+}
+
+.indicator {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--color-key);
+}
+
+.CapsLock.pressed > .indicator {
+    background-color: #17e51e;
 }
