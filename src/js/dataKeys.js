@@ -3,7 +3,7 @@ const en = [
     ['Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\', 'Del'],
     ['Caps Lock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'Enter'],
     ['Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '&#9650', 'Shift'],
-    ['Ctrl', 'Win', 'Alt', ' ', 'Alt', '&#9668', '&#9660', '&#9658', 'Ctrl']
+    ['Ctrl', 'Opt', 'Alt', ' ', 'Alt', '&#9668', '&#9660', '&#9658', 'Ctrl']
 ]
 
 const ru = [
@@ -11,7 +11,23 @@ const ru = [
     ['Tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', '&#92;', 'Del'],
     ['Caps Lock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'Enter'],
     ['Shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', '&#9650', 'Shift'],
-    ['Ctrl', 'Win', 'Alt', ' ', 'Alt', '&#9668', '&#9660', '&#9658', 'Ctrl']
+    ['Ctrl', 'Opt', 'Alt', ' ', 'Alt', '&#9668', '&#9660', '&#9658', 'Ctrl']
+]
+
+const ruShift = [
+    ['Ё', '!', '"', '№', ';', '%', ':', '?', '*', '(', ')', '_', '+', 'Backspace'],
+    ['Tab', 'Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш', 'Щ', 'З', 'Х', 'Ъ', '/', 'Del'],
+    ['Caps Lock', 'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л', 'Д', 'Ж', 'Э', 'Enter'],
+    ['Shift', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', ',', '&#9650', 'Shift'],
+    ['Ctrl', 'Opt', 'Alt', ' ', 'Alt', '&#9668', '&#9660', '&#9658', 'Ctrl']
+]
+
+const enShift = [
+    ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', 'Backspace'],
+    ['Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '{', '}', '|', 'Del'],
+    ['Caps Lock', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ':', '"', 'Enter'],
+    ['Shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?', '&#9650', 'Shift'],
+    ['Ctrl', 'Opt', 'Alt', ' ', 'Alt', '&#9668', '&#9660', '&#9658', 'Ctrl']
 ]
 
 const keyCode = [
@@ -67,4 +83,24 @@ const keyCode = [
     ['ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'AltRight', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'ControlRight']
 ]
 
-export { en, ru, keyCode }
+const special = [
+    'Backspace',
+    'Tab',
+    'Delete',
+    'CapsLock',
+    'Enter',
+    'ShiftLeft',
+    'ArrowUp',
+    'ShiftRight',
+    'ControlLeft',
+    'MetaLeft',
+    'AltLeft',
+    'Space',
+    'AltRight',
+    'ControlRight',
+    'ArrowLeft',
+    'ArrowDown',
+    'ArrowRight'
+]
+
+export { en, ru, special, keyCode, ruShift, enShift }

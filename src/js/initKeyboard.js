@@ -8,7 +8,7 @@ const initKeyboardRoot = () => {
       <h1 class="title">Virtual Keyboard</h1>
       <div class="info">
         <p>Keyboard created in Ubuntu operating system</p>
-        <p>You can change the language using [LEFT CTRL] + [LEFT ALT]</p>
+        <p>You can change the language using [ALT] + [CTRL]</p>
         </div>
       </div>
       <textarea rows="10" cols="50" class="textarea"></textarea>
@@ -27,7 +27,7 @@ const createButtons = (arr) => {
         rowKey.forEach((key, j) => {
             row.insertAdjacentHTML(
                 'beforeend',
-                `<div class="key ${keyCode[i][j]}" data-code="${keyCode[i][j]}" id="${keyCode[i][j]}">${key}</div>`
+                `<div class="key ${keyCode[i][j]}" data-code="${keyCode[i][j]}">${key}</div>`
             )
         })
         keysRoot.append(row)

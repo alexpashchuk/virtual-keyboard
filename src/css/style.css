@@ -39,7 +39,6 @@ h6 {
 }
 
 body {
-    transition: 0.3s;
     background-color: var(--white);
 }
 
@@ -117,18 +116,21 @@ body {
     height: 65px;
     background-color: var(--bg-key);
     color: var(--color-key);
-    border-radius: 12px;
-}
-
-.pressed {
-    background: var(--bg-key-active);
-    transform: scale(0.95);
-    transition: all 0.2s ease-in-out;
+    transform: scale(1);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
 }
 
 .key:hover {
     cursor: pointer;
     background: var(--bg-key-hover);
+    transition: all 0.2s ease-in-out;
+}
+
+.key.active {
+    background-color: var(--bg-key-active);
+    transform: scale(0.95);
+    transition: all 0.2s ease-in-out;
 }
 
 .Enter,
@@ -157,6 +159,6 @@ body {
     background-color: var(--color-key);
 }
 
-.CapsLock.pressed > .indicator {
+.CapsLock.on > .indicator {
     background-color: #17e51e;
 }

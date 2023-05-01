@@ -1,5 +1,6 @@
 import { en, ru } from './js/dataKeys'
 import { initKeyboardRoot, createButtons } from './js/initKeyboard'
+import { initListeners } from './js/keyboard'
 
 window.addEventListener('DOMContentLoaded', () => {
     initKeyboardRoot()
@@ -13,4 +14,5 @@ window.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('lang', 'en')
         createButtons(en)
     }
+    initListeners()
 })
