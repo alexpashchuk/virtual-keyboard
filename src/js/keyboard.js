@@ -61,10 +61,25 @@ const handleCapsLock = () => {
         if (btn.innerHTML.length === 1) {
             if (!capsLock) {
                 BTN.innerHTML = btn.innerHTML.toUpperCase()
-                capsBtn.classList.remove('off')
             } else {
                 BTN.innerHTML = btn.innerHTML.toLowerCase()
-                capsBtn.classList.add('off')
+            }
+        }
+    })
+    capsLock = !capsLock
+}
+
+const handleCapsLockShift = () => {
+    const buttons = document.querySelectorAll('.key')
+    const capsBtn = document.querySelector('.CapsLock')
+    capsBtn.classList.toggle('on')
+    buttons.forEach((btn) => {
+        const BTN = btn
+        if (btn.innerHTML.length === 1) {
+            if (!capsLock && !shift) {
+                BTN.innerHTML = btn.innerHTML.toLowerCase()
+            } else if (!capsLock && shift) {
+                BTN.innerHTML = btn.innerHTML.toUpperCase()
             }
         }
     })
@@ -81,23 +96,14 @@ const getActive = (code) => {
 }
 
 const renderKeyboard = (arr) => {
-    const buttons = document.querySelectorAll('.key')
     if (!shift) {
         createButtons(arr)
     } else {
         createButtons(localStorage.getItem('lang') === 'en' ? en : ru)
     }
     if (capsLock) {
-        buttons.forEach((btn) => {
-            const BTN = btn
-            if (btn.innerHTML.length === 1) {
-                if (!capsLock) {
-                    BTN.innerHTML = btn.innerHTML.toUpperCase()
-                } else {
-                    BTN.innerHTML = btn.innerHTML.toLowerCase()
-                }
-            }
-        })
+        capsLock = !capsLock
+        handleCapsLockShift()
     }
     shift = !shift
 }
@@ -137,6 +143,8 @@ const initListeners = () => {
             event.preventDefault()
         } else if (event.altKey && event.ctrlKey) {
             changeLanguage(event)
+        } else if (code === 'ArrowLeft' || code === 'ArrowUp' || code === 'ArrowRight' || code === 'ArrowDown') {
+            printValue(code, event)
         }
         if (isSpecial(code)) {
             textArea.focus()
@@ -161,10 +169,8 @@ const initListeners = () => {
 
     document.addEventListener('mousedown', (event) => {
         const { code } = event.target.dataset
-        const capsBtn = document.querySelector('.CapsLock')
         const textArea = document.querySelector('.textarea')
         const buttons = document.querySelectorAll('.key')
-        // const isCapsOn = capsBtn.classList.contains('on')
         buttons.forEach((btn) => {
             if (btn.dataset.code === code) {
                 btn.classList.add('active')
@@ -186,7 +192,6 @@ const initListeners = () => {
             handleDelete(event)
         } else if (code === 'CapsLock') {
             handleCapsLock(event)
-            capsBtn.classList.toggle('on')
         } else if (code === 'ArrowLeft' || code === 'ArrowUp' || code === 'ArrowRight' || code === 'ArrowDown') {
             printValue(code, event)
         }
