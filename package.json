@@ -7,7 +7,8 @@
     "lint": "npx eslint ./src",
     "lint:fix": "npx eslint ./src --fix",
     "start": "webpack serve --env development",
-    "build": "webpack"
+    "build": "webpack",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/alexpashchuk/virtual-keyboard/issues"
   },
-  "homepage": "https://github.com/alexpashchuk/virtual-keyboard#readme",
+  "homepage": "https://github.com/alexpashchuk/virtual-keyboard",
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^8.1.1",
@@ -29,6 +30,7 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
+    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^1.6.2",
     "sass": "^1.42.1",
